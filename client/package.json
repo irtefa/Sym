@@ -1,0 +1,11 @@
+{
+  "name": "sym",
+  "description": "symptom checker based on health data",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "express": "*",
+    "jade": "*",
+    "underscore": "*"
+  }
+}
