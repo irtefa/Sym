@@ -34,9 +34,16 @@ app.get('/test', function(req, res) {
 
 app.post('/search', function(req, res) {
     var querystring = '';
-    _.each(req.body.query, function(q) {
-        querystring += '+symptoms:'+q+'*&';
-    })
+    console.log(req.body.query);
+    _.each(req.body.query, function(symptom) {
+        var body = symptom.split(',');
+        _.each(body, function(q) {
+            querystring += '+symptoms:'+q+'&';
+        });
+        querystring += 'and';
+    });
+
+    querystring = querystring.replace(/\s+/g, '%20');
 
     var options = {
         host: 'localhost',
@@ -45,7 +52,7 @@ app.post('/search', function(req, res) {
         method: 'GET'
     };
 
-    console.log('/symptom/data/_search?q='+querystring+'*&pretty=true&size=100')
+    console.log('/symptom/data/_search?q='+querystring+'&pretty=true&size=100')
 
     callback = function(response) {
         var str = '';

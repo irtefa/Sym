@@ -6,48 +6,51 @@ head
     meta(name='viewport', content='width=device-width, initial-scale=1')
     link(rel='shortcut icon', type='image/x-icon', href='http://twitter.com/favicons/favicon.ico')
     link(rel='stylesheet', href='/css/vendor/examples.css')
+    link(rel='stylesheet', href='/css/test.css')
   body
     .container
-      h1.title examples
-      ol.table-of-contents
-        li
-          a(href='#the-basics') The Basics
-        span  · 
-        li
-          a(href='#bloodhound') Bloodhound
-        span  · 
-        li
-          a(href='#prefetch') Prefetch
-        span  · 
-        li
-          a(href='#remote') Remote
-        span  · 
-        li
-          a(href='#custom-templates') Custom Templates
-        span  · 
-        li
-          a(href='#multiple-datasets') Multiple Datasets
-        span  · 
-        li
-          a(href='#scrollable-dropdown-menu') Scrollable Dropdown Menu
-        span  · 
-        li
-          a(href='#rtl-support') RTL Support
+      h1.title sym
+      p.example-description
+        | The Google for symptoms
+      //- ol.table-of-contents
+      //-   li
+      //-     a(href='#the-basics') The Basics
+      //-   span  · 
+      //-   li
+      //-     a(href='#bloodhound') Bloodhound
+      //-   span  · 
+      //-   li
+      //-     a(href='#prefetch') Prefetch
+      //-   span  · 
+      //-   li
+      //-     a(href='#remote') Remote
+      //-   span  · 
+      //-   li
+      //-     a(href='#custom-templates') Custom Templates
+      //-   span  · 
+      //-   li
+      //-     a(href='#multiple-datasets') Multiple Datasets
+      //-   span  · 
+      //-   li
+      //-     a(href='#scrollable-dropdown-menu') Scrollable Dropdown Menu
+      //-   span  · 
+      //-   li
+      //-     a(href='#rtl-support') RTL Support
       #the-basics.example
-        h2.example-name The Basics
+        h2.example-name How to get started?
         p.example-description
-          | When initializing a typeahead using the
-          a(href='https://github.com/twitter/typeahead.js/blob/master/doc/jquery_typeahead.md') typeahead.js jQuery plugin
-          | ,
-          | you pass the plugin method one or more
-          a(href='https://github.com/twitter/typeahead.js/blob/master/doc/jquery_typeahead.md#datasets') datasets
-          | .
-          | The source of a dataset is responsible for computing a set of
-          | suggestions for a given query.
+          | Start by searching your symptoms one at a time
         .demo
           input.typeahead(class='box' type='text', placeholder='How do you feel?')
+        .symptoms-added
+        br
+        br
+        br
+        br
+        .search-results
     script(src='/js/vendor/jquery.min.js')
     script(src='/js/vendor/handlebars.js')
+    script(src='/js/vendor/underscore-min.js')  
     script(src='/js/vendor/typeahead.bundle.js')
     script(src='/js/symptoms.js')
     script(src='/js/vendor/examples.js')

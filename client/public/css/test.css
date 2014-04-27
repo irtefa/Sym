@@ -1,0 +1,22 @@
+.added-symptom {
+    float: left;
+    background-color: #428bca;
+    padding: 6px;
+    color: #fff;
+    border-radius: 5px;
+    margin: 2px;
+}
+
+.added-symptom:hover {
+    cursor: pointer;
+    background-color: red;
+}
+
+table {
+    background-color: #16a085;
+    color: #fff;
+    margin: 2px;
+    border-radius: 5px;
+    padding: 46px;
+    margin: 0 auto;
+}
