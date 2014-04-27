@@ -1,4 +1,9 @@
 $(document).ready(function(e) {
+    $('.box').on('typeahead:selected', function(evt, item) {
+          var query = item.value;
+          console.log(query);
+    });
+
     $(document).on('click', '.search', function (e) {
         var query = [$('#search-form-1').val(), $('#search-form-2').val(), $('#search-form-3').val()];
 

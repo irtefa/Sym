@@ -45,74 +45,10 @@ head
           | The source of a dataset is responsible for computing a set of
           | suggestions for a given query.
         .demo
-          input.typeahead(type='text', placeholder='States of USA')
-        .gist
-          script(src='https://gist.github.com/jharding/9458744.js')
-      #bloodhound.example
-        h2.example-name Bloodhound (Suggestion Engine)
-        p.example-description
-          | For more advanced use cases, rather than implementing the source for
-          | your dataset yourself, you can take advantage of
-          a(href='https://github.com/twitter/typeahead.js/blob/master/doc/bloodhound.md') Bloodhound
-          | ,
-          | the typeahead.js suggestion engine.
-        p.example-description
-          | Bloodhound is robust, flexible, and offers advanced functionalities
-          | such as prefetching, intelligent caching, fast lookups, and
-          | backfilling with remote data.
-        .demo
-          input.typeahead(type='text', placeholder='States of USA')
-        .gist
-          script(src='https://gist.github.com/jharding/9458749.js')
-      #prefetch.example
-        h2.example-name Prefetch
-        p.example-description
-          | Prefetched data is fetched and processed on initialization. If the
-          | browser supports local storage, the processed data will be cached
-          | there to prevent additional network requests on subsequent page loads.
-        .demo
-          input.typeahead(type='text', placeholder='Countries')
-        .gist
-          script(src='https://gist.github.com/jharding/9458762.js')
-      #remote.example
-        h2.example-name Remote
-        p.example-description
-          | Remote data is only used when the data provided by local and prefetch
-          | is insufficient. In order to prevent an obscene number of requests
-          | being made to the remote endpoint, requests are rate-limited.
-        .demo
-          input.typeahead(type='text', placeholder='Oscar winners for Best Picture')
-        .gist
-          script(src='https://gist.github.com/jharding/9458772.js')
-      #custom-templates.example
-        h2.example-name Custom Templates
-        p.example-description
-          | Custom templates give you full control over how suggestions get
-          | rendered making it easy to customize the look and feel of your
-          | typeahead.
-        .demo
-          input.typeahead(type='text', placeholder='Oscar winners for Best Picture')
-        .gist
-          script(src='https://gist.github.com/jharding/9458780.js')
-      #multiple-datasets.example
-        h2.example-name Multiple Datasets
-        .demo
-          input.typeahead(type='text', placeholder='NBA and NHL teams')
-        .gist
-          script(src='https://gist.github.com/jharding/9458797.js')
-      #scrollable-dropdown-menu.example
-        h2.example-name Scrollable Dropdown Menu
-        .demo
-          input.typeahead(type='text', placeholder='Countries')
-        .gist
-          script(src='https://gist.github.com/jharding/9458816.js')
-      #rtl-support.example
-        h2.example-name RTL Support
-        .demo
-          input.typeahead(type='text', dir='rtl', placeholder='نعم')
-        .gist
-          script(src='https://gist.github.com/jharding/9458824.js')
+          input.typeahead(class='box' type='text', placeholder='How do you feel?')
     script(src='/js/vendor/jquery.min.js')
     script(src='/js/vendor/handlebars.js')
     script(src='/js/vendor/typeahead.bundle.js')
+    script(src='/js/symptoms.js')
     script(src='/js/vendor/examples.js')
+    script(src='/js/search.js')
