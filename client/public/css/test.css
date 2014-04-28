@@ -20,3 +20,8 @@ table {
     padding: 46px;
     margin: 0 auto;
 }
+
+.disease-name {
+    padding: 5px;
+    font-size: 20px;
+}

@@ -2,6 +2,7 @@ window.chosen = [];
 
 $(document).ready(function(e) {
     $('.box').on('typeahead:selected', function(evt, item) {
+        $('.guide').html('Keep adding more symptoms to narrow down the diagnosis');
         var query = item.value;
         chosen.push(query);
         $('.symptoms-added').append('<div class="added-symptom" data-toggle="tooltip" data-placement="left" title="Tooltip on left">'+query+'</div>');
@@ -38,8 +39,8 @@ $(document).ready(function(e) {
         });
         chosen = newChosen;
         $(this).remove();
-        $('.search-results').empty();   
-        $('.search-results').append('<table class="table"><thead><tr class="table-header"><th>Disease</th><th>Likelihood</th></tr></thead><tbody></tbody></table>');    
+        $('.search-results').empty();       
+        $('.search-results').append('<table class="table"><tbody></tbody></table>');        
         $.ajax({
             url: '/search',
             type: 'POST',
@@ -61,7 +62,7 @@ $(document).ready(function(e) {
 });
 
 function constructDiv(obj, likelihood) {
-    return '<tr><td class="disease-name" value="'+obj['_source']+'">'+obj['_source']['disease']+'</td><td>('+likelihood+'%)</td></tr>';
+    return '<tr><td class="disease-name" value="'+obj['_source']+'">'+obj['_source']['disease']+' ('+likelihood+'%)</td></tr>';
 }
 
 function computeLikelihood(disease) {
