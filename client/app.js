@@ -22,13 +22,7 @@ app.set('view options', {
 
 app.get('/', function(req, res) {
     res.render('index.jade', {
-        title: 'sym'
-    });
-});
-
-app.get('/test', function(req, res) {
-    res.render('test.jade', {
-        title: 'sym'
+        title: 'Sym'
     });
 });
 

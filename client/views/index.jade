@@ -1,77 +1,57 @@
-doctype
 html(lang='en')
 head
     meta(charset='utf-8')
-    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
+    title typeahead.js – examples
     meta(name='viewport', content='width=device-width, initial-scale=1')
-    meta(name='description', content='')
-    meta(name='author', content='')
-    title sym
-    //
-       Bootstrap core CSS 
-    link(href='/css/vendor/bootstrap.min.css', rel='stylesheet')
-    //
-       Custom styles for this template 
-    link(href='/css/vendor/cover.css', rel='stylesheet')
-    //
-       Just for debugging purposes. Don't actually copy this line! 
-    //if lt IE 9
-      script(src='../../assets/js/ie8-responsive-file-warning.js')
-    //
-       HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries 
-    //if lt IE 9
-      script(src='https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js')
-      script(src='https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js')
-body
-.site-wrapper
-  .site-wrapper-inner
-    .cover-container
-      .masthead.clearfix
-        .inner
-          h3.masthead-brand sym
-          //- ul.nav.masthead-nav
-          //-   li.active
-          //-     a(href='#') Home
-          //-   li
-          //-     a(href='#') Features
-          //-   li
-          //-     a(href='#') Contact
-      .inner.cover
-        h1.cover-heading What is bothering you today?
-        p.lead
-            form(role='form')
-                .form-group
-                    label Add a Symptom
-                    textarea.search-form#search-form-1.form-control(rows='1' type='text')
-        p.lead
-            form(role='form')
-                .form-group
-                    textarea.search-form#search-form-2.form-control(rows='1' type='text')
-        p.lead
-            form(role='form')
-                .form-group
-                    textarea.search-form#search-form-3.form-control(rows='1' type='text')
-        p.lead
-            .btn.btn-primary.search Submit
-        //- p.lead
-        //-   | Sym is the Google for your health symptoms
-        //- p.lead
-          //- a.btn.btn-lg.btn-default(href='#') Learn more
-        p.lead
-            .highlight.results
-      .mastfoot
-        .inner
-          p
-            | Sym is created by
-            a(href='http://irtefa.com')  Mohd Irtefa
-//
-   Bootstrap core JavaScript
-      ================================================== 
-// Placed at the end of the document so the pages load faster
-script(src='/js/vendor/jquery.min.js')
-script(src='/js/vendor/bootstrap.min.js')
-script(src='/js/vendor/docs.min.js')
-script(src='/js/vendor/underscore-min.js')
-script(src='/js/vendor/underscore-min.map.json')
-script(src='/js/search.js')
-
+    link(rel='shortcut icon', type='image/x-icon', href='http://twitter.com/favicons/favicon.ico')
+    link(rel='stylesheet', href='/css/vendor/examples.css')
+    link(rel='stylesheet', href='/css/test.css')
+  body
+    .container
+      h1.title sym
+      p.example-description
+        | The Google for symptoms
+      //- ol.table-of-contents
+      //-   li
+      //-     a(href='#the-basics') The Basics
+      //-   span  · 
+      //-   li
+      //-     a(href='#bloodhound') Bloodhound
+      //-   span  · 
+      //-   li
+      //-     a(href='#prefetch') Prefetch
+      //-   span  · 
+      //-   li
+      //-     a(href='#remote') Remote
+      //-   span  · 
+      //-   li
+      //-     a(href='#custom-templates') Custom Templates
+      //-   span  · 
+      //-   li
+      //-     a(href='#multiple-datasets') Multiple Datasets
+      //-   span  · 
+      //-   li
+      //-     a(href='#scrollable-dropdown-menu') Scrollable Dropdown Menu
+      //-   span  · 
+      //-   li
+      //-     a(href='#rtl-support') RTL Support
+      #the-basics.example
+        h2.example-name How to get started?
+        p.example-description.guide
+          | Start by searching your symptoms one at a time
+        .demo
+          input.typeahead(class='box' type='text', placeholder='How do you feel?')
+        .symptoms-added
+        br
+        br
+        br
+        br
+        .search-results
+    script(src='/js/vendor/jquery.min.js')
+    script(src='/js/vendor/handlebars.js')
+    script(src='/js/vendor/underscore-min.js')  
+    script(src='/js/vendor/typeahead.bundle.js')
+    script(src='/js/symptoms.js')
+    script(src='/js/vendor/examples.js')
+    script(src='/js/search.js')

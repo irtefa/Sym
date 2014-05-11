@@ -14,6 +14,7 @@ $(document).ready(function(e) {
             type: 'POST',
             data: {'query': chosen},
             success: function(data) {
+                console.log(data);
                 var parsed_data = JSON.stringify(eval("(" + data + ")"));
                 var recvData = JSON.parse(parsed_data);
                 var hitsArray = recvData['hits']['hits'];

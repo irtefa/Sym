@@ -1,10 +1,18 @@
 from pyquery import PyQuery as pq
 from os import walk
+import requests
+import json
 
 '''
     The Symptom Disease dictionary is structured like this
     Disease -> [Symptom_1, Symptom_2, ....]
 '''
+
+#CONSTANTS
+# ELASTIC_HOST = 'http://localhost:9200/'
+ELASTIC_HOST = 'http://apricot-4314920.us-east-1.bonsai.io/'
+HEADERS = {'content-type': 'application/json'}
+INDEX = 'symptom'
 
 files = []
 symdict = {}
@@ -54,4 +62,34 @@ for filename in files:
             else:
                 symdict[disease] = [symptom]
 
-print symdict
+#Flush older index
+# r = requests.delete(ELASTIC_HOST+INDEX+'/')
+# print r.text
+
+#Index new data
+for disease in symdict:
+    elasticobj = {
+        'disease': disease,
+        'symptoms': symdict[disease]
+    }
+
+    r = requests.post(ELASTIC_HOST+INDEX+'/data/', data=json.dumps(elasticobj), headers=HEADERS)
+    print r.text
+
+# #JSON List
+# syms = []
+
+# #Write to JSON file
+# for key in symdict:
+#     for symptom in symdict[key]:
+#         syms.append(symptom.lower())
+
+# syms = set(syms)
+
+# unique_syms = []
+
+# for symptom in syms:
+#     unique_syms.append(symptom)
+
+# with open("symptoms.json", "w") as outfile:
+#     json.dump(unique_syms, outfile, indent=4)
